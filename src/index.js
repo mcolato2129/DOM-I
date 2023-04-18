@@ -1,3 +1,4 @@
+
 const siteContent = { // DO NOT CHANGE THIS OBJECT
   "nav": {
     "nav-item-1": "Services",
@@ -40,3 +41,52 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
 };
 
 console.log('project wired!')
+
+const nav = document.querySelectorAll('nav a');
+const navLinks = Object.values(siteContent.nav);
+nav.forEach((link, index) => {
+  link.classList.add('italic');
+  link.textContent = navLinks[index];
+})
+
+const logo = document.querySelector('#logo-img');
+logo.setAttribute('src', 'http://localhost:9000/img/logo.png')
+
+const h1 = document.querySelector('.cta-text h1');
+h1.textContent = siteContent['cta']['h1']
+const button = document.querySelector('.cta-text button');
+button.textContent = siteContent['cta']['button']
+const img1 = document.querySelector('#cta-img');
+
+img1.setAttribute('src', siteContent['images']['cta-img']);
+const img2 = document.querySelector('#middle-img')
+img2.setAttribute('src', siteContent['images']['accent-img']);
+
+const pTag = document.querySelectorAll('p');
+const titles = document.querySelectorAll('h4');
+
+titles[0].textContent = siteContent['main-content']['features-h4'];
+pTag[0].textContent = siteContent['main-content']['features-content'];
+
+titles[1].textContent = siteContent['main-content']['about-h4'];
+pTag[1].textContent = siteContent['main-content']['about-content'];
+
+titles[2].textContent = siteContent['main-content']['services-h4'];
+pTag[2].textContent = siteContent['main-content']['services-content'];
+
+titles[3].textContent = siteContent['main-content']['product-h4'];
+pTag[3].textContent = siteContent['main-content']['product-content'];
+
+titles[4].textContent = siteContent['main-content']['vision-h4'];
+pTag[4].textContent = siteContent['main-content']['vision-content'];
+
+titles[5].textContent = siteContent['contact']['contact-h4'];
+
+const contact = document.querySelectorAll('.contact p');
+contact[0].textContent = siteContent['contact']['address'];
+contact[1].textContent = siteContent['contact']['phone'];
+contact[2].textContent = siteContent['contact']['email'];
+
+const footer = document.querySelector('footer a');
+footer.classList.add('bold');
+footer.textContent = siteContent['footer']['copyright'];
